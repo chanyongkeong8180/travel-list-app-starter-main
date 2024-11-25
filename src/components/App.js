@@ -16,7 +16,9 @@ function Form({AddItem}) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!description) return (alert("Item must not be empty."));
+    if (!description) return (
+      alert("Item must not be empty.")
+    );
     const newItem = {
       id: Date.now(),
       description,
@@ -73,7 +75,9 @@ function Stats() {
 function App() {
   const [items, setItems] = useState([]);
   function handleAddItem (item) {
-    setItems((prevItems) => [...prevItems, item]);
+    setItems((prevItems) => {
+      return [...prevItems, item];
+    });
   }
   return (
     <div className="app">
